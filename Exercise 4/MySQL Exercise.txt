@@ -1,0 +1,158 @@
+1. Get the first name of all customers
+
+   SELECT name FROM customers;
+Claus;
+	
+	Tove
+	Svend
+	Per
+	Bent
+	Thor
+	Hanne
+	Søren
+	Per
+	Ytring
+	Pavel
+	Ulla
+	Elvis
+	Suleman
+	Suleman
+
+
+2. Get the full name of all customers
+
+   SELECT name, last_name FROM customers
+;
+	
+	Claus	Bové
+	Tove	Hansen
+	Svend	Guttormsen
+	Per	Hansen
+	Bent	Torstensen
+	Thor	Thorsen
+	Hanne	Flim
+	Søren	Sørensen
+	Per	Holst
+	Ytring	Hanibal
+	Pavel	Slipovitch
+	Ulla	Jensen
+	Elvis	Saronjic
+	Suleman	Lindgård
+	Suleman	Lindgård
+
+
+3. Get the name, last name, phone number and email of all customers
+
+   SELECT name, last_name, phone, email FROM customers
+;
+	
+	Claus	Bové	26252423	clbo@kea.dk
+	Hanne	Flim	10202233	hann@kea.dk
+	Svend	Guttormsen	76554466	sven@kea.dk
+	Ytring	Hanibal	99998876	ytri@kea.dk
+	Tove	Hansen	33224455	tove@kea.dk
+	Per	Hansen	22331122	perh@kea.dk
+	Per	Holst	23112210	pero@kea.dk
+	Ulla	Jensen	66778899	ulla@kea.dk
+	Suleman	Lindgård	12345678	Sul@kea.dk
+	Suleman	Lindgård	12345678	Sul@kea.dk
+	Elvis	Saronjic	12345678	elsar@hotmail.dk
+	Pavel	Slipovitch	82647351	pave@kea.dk
+	Søren	Sørensen	33124465	sore@kea.dk
+	Thor	Thorsen	11221122	thor@kea.dk
+	Bent	Torstensen	76548762	bent@kea.dk
+			
+
+4. Get the email and phone number of all customers
+
+   SELECT phone, email FROM customers
+;
+	
+	26252423	clbo@kea.dk
+	33224455	tove@kea.dk
+	76554466	sven@kea.dk
+	22331122	perh@kea.dk
+	76548762	bent@kea.dk
+	11221122	thor@kea.dk
+	10202233	hann@kea.dk
+	33124465	sore@kea.dk
+	23112210	pero@kea.dk
+	99998876	ytri@kea.dk
+	82647351	pave@kea.dk
+	66778899	ulla@kea.dk
+	12345678	elsar@hotmail.dk
+	12345678	Sul@kea.dk
+	12345678	Sul@kea.dk
+
+5. Get all information of all customers
+
+   SELECT * FROM customers;
+
+
+	1	Claus	Bové	26252423	clbo@kea.dk
+	2	Tove	Hansen	33224455	tove@kea.dk
+	3	Svend	Guttormsen	76554466	sven@kea.dk
+	4	Per	Hansen	22331122	perh@kea.dk
+	5	Bent	Torstensen	76548762	bent@kea.dk
+	6	Thor	Thorsen	11221122	thor@kea.dk
+	7	Hanne	Flim	10202233	hann@kea.dk
+	8	Søren	Sørensen	33124465	sore@kea.dk
+	9	Per	Holst	23112210	pero@kea.dk
+	10	Ytring	Hanibal	99998876	ytri@kea.dk
+	11	Pavel	Slipovitch	82647351	pave@kea.dk
+	12	Ulla	Jensen	66778899	ulla@kea.dk
+	13	Elvis	Saronjic	12345678	elsar@hotmail.dk
+	14	Suleman	Lindgård	12345678	Sul@kea.dk
+	15	Suleman	Lindgård	12345678	Sul@kea.dk
+				
+
+6. Get name of all costumers with the last name of "Hansen"
+
+   SELECT * FROM customers WHERE last_name = 'Hansen';
+
+
+	2	Tove	Hansen	33224455	tove@kea.dk
+	4	Per	Hansen	22331122	perh@kea.dk
+				
+
+7. Get full name of all customers with the name of "Per" 
+
+   SELECT * FROM customers WHERE name = 'Per';
+
+
+	4	Per	Hansen	22331122	perh@kea.dk
+	9	Per	Holst	23112210	pero@kea.dk
+				
+
+8. Get all info of customers with the phone number 82647351
+
+   SELECT * FROM customers WHERE phone = '82647351';
+
+
+	11	Pavel	Slipovitch	82647351	pave@kea.dk
+				
+
+9. Get name and phone number of customers with the email bent@kea.dk
+
+   SELECT name, phone FROM customers WHERE email = 'bent@kea.dk';
+
+
+	Bent	76548762
+	
+
+10. Get id of customers with the email pave@kea.dk
+
+    SELECT id FROM customers WHERE email = 'pave@kea.dk';
+
+
+	11
+
+11. Get all info of customers with a name that has something to do with alcohol
+
+
+12. Get the the full name of your teacher  
+
+    SELECT name, last_name from customers WHERE name = 'Claus';
+
+	Claus	Bové
+				
