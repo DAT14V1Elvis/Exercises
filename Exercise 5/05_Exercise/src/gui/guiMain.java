@@ -2,14 +2,20 @@ package gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import dataBase.MySql;
+
+
 import javax.swing.JTextArea;
+
+import dataBase.Database;
+import application.Customer;
+
 
 
 
@@ -25,7 +31,7 @@ public class guiMain implements ActionListener
 	JButton btnOpret = new JButton("Opret");
 	JTextArea textArea = new JTextArea();
 
-	MySql ms = new MySql();
+	Database dB = new Database();
 
 
 
@@ -83,6 +89,7 @@ public class guiMain implements ActionListener
 		contentPane.add(textArea);
 
 
+		// har kun brug for 		btnOpret.addActionListener(this);
 
 		nameTxt.addActionListener(this);
 		lastnameTxt.addActionListener(this);
@@ -96,18 +103,13 @@ public class guiMain implements ActionListener
 	{
 		if(e.getSource() == btnOpret)
 		{
-			String name = nameTxt.getText();
-			String lastName = lastnameTxt.getText();
-			int phone = Integer.parseInt(phoneTxt.getText());
-			String mail = mailTxt.getText();
-			try {
-				ms.insertDB(name, lastName, phone, mail);
-				nameTxt.setText(" ");
-				lastnameTxt.setText(" ");
-				phoneTxt.setText("");
-				mailTxt.setText(" ");
+			try 
+			{
+				Customer newCustomer = new Customer(nameTxt.getText(), lastnameTxt.getText(), phoneTxt.getText(), mailTxt.getText());
 
-				textArea.setText(ms.arrayToString());		
+				dB.insertDB(newCustomer);
+
+				textArea.setText(dB.arrayToString());		
 			} 
 
 			catch (SQLException e1) 
@@ -116,4 +118,6 @@ public class guiMain implements ActionListener
 			}
 		}
 	}
+
+
 }
